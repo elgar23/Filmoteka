@@ -1,0 +1,139 @@
+body {
+  overflow: visible;
+}
+
+body.show-modal {
+  overflow: hidden;
+}
+
+body.show-modal .modal-wrapper {
+  opacity: 1;
+  user-select: inherit;
+  pointer-events: all;
+  visibility: visible;
+
+  transition: 250ms all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-wrapper {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+
+  opacity: 0;
+  user-select: none;
+  pointer-events: none;
+  visibility: hidden;
+  overflow-y: scroll;
+}
+
+.team-btn-close {
+  position: absolute;
+  top: 70px;
+  right: 40px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.modal__team {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 20px;
+  width: 70vw;
+  height: 90vh;
+
+  background-color: $color-white;
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+  }
+}
+
+.modal-command {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin: 40px auto;
+  padding: 40px;
+  width: 100%;
+  background: white;
+  // border-radius: 5px;
+
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial,
+    sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $color-black;
+}
+
+.team-heading {
+  margin-bottom: 50px;
+  border-bottom: solid 3px $color-bcg-btn;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 700;
+  color: $color-bcg-btn;
+}
+
+.team-members {
+  max-width: 1024px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.member {
+  margin: 15px;
+  display: flex;
+  flex-direction: column;
+
+  &:hover,
+  &:focus {
+    transition: $transition-common;
+    color: $color-orange;
+  }
+}
+
+.member-img {
+  margin-bottom: 15px;
+  width: 150px;
+
+  box-shadow: 2px 2px 1px $color-text-modal, 3px 3px 1px $color-bcg-btn;
+  border-radius: 5px;
+}
+
+.member-link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    color: $color-orange;
+    transition: $transition-common;
+  }
+}
+.member-img,
+.member-info,
+.member-link {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

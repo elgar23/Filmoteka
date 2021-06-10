@@ -1,0 +1,65 @@
+//Font only Roboto, used weight 400 or 500
+$font: 'Roboto', sans-serif;
+
+//primary background color
+//and text color in header
+$color-white: #ffffff;
+
+//primary titles color
+//and primary text color in modal
+$color-black: #000000;
+
+//secondary titles color
+//and accent color
+$color-orange: #ff6b08;
+
+// error text color in header
+$color-error-text: #ff001b;
+
+//secondary text color for modal
+$color-text-modal: #8c8c8c;
+
+// footer background color
+// and background of rates in modal
+$color-bcg-grey: #f7f7f7;
+
+//text color in footer
+$color-text-footer: #545454;
+
+//background color for Buttons
+//and background of rates
+$color-bcg-btn: #ff6b01;
+
+//font-size
+$main-font-size: 12px;
+$footer-font-size: 16px;
+// footer - mobile font size
+$search-font-size: 14px;
+
+// font weight
+$title-font-weigth: 700;
+$main-font-weight: 500;
+$footer-font-weight: 400;
+
+//line-height
+$main-line-height: 1.33;
+$title-line-height: 1.17;
+$footer-desc-line-height: 1.19;
+$modal-line-height: 1.15;
+$modal-text-line-height: 1.67;
+
+// main padding
+$mob-side-container: 20px;
+$tablet-side-container: 76px;
+$desk-side-container: 71px;
+
+// by Maryasov
+// for FT-11 _library.scss
+//break-points
+$width_mobile: 320px;
+$width_tablet: 768px;
+$width_desktop: 1024px;
+
+//transition variables
+$duration_transition: 0.25s;
+$transition-common: $duration_transition cubic-bezier(0.4, 0, 0.2, 1);

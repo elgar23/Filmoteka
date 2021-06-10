@@ -1,0 +1,132 @@
+p,
+ul,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.movie-cards {
+  display: block;
+  padding: 20px 0px 40px;
+  &.is-hidden {
+    display: none;
+  }
+  @media screen and (min-width: $tablet) {
+    padding: 60px 0px 60px;
+  }
+}
+
+.movie-grid {
+  margin-right: auto;
+  margin-left: auto;
+  list-style: none;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    display: grid;
+    width: 617px;
+    margin-bottom: 50px;
+    grid-template-columns: 323px 293px;
+  }
+  @media screen and (min-width: $desktop) {
+    display: grid;
+    width: 882px;
+    grid-template-columns: 304px 304px 274px;
+  }
+
+  &__item {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 280px;
+    border: 1px solid rgba(225, 225, 225, 10);
+    border-radius: 5px;
+    box-shadow: 3px 3px 5px 0px rgba(225, 225, 225, 10);
+    transition: $transition-common;
+    &:hover {
+      box-shadow: 5px 5px 10px 0px rgba(200, 200, 200, 50);
+      transform: scale(1.02);
+    }
+    //
+    @media screen and (min-width: $tablet) {
+      width: 293px;
+      margin-left: 0;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 274px;
+    }
+
+    &:nth-child(2n) {
+      @media screen and (min-width: $tablet) {
+        margin-right: 0px;
+      }
+      @media screen and (min-width: $desktop) {
+        margin-right: 30px;
+      }
+    }
+
+    &:nth-child(3n) {
+      @media screen and (min-width: $desktop) {
+        margin-right: 0px;
+      }
+    }
+  }
+
+  &__item > a {
+    text-decoration: none;
+    height: 100%;
+  }
+
+  &__poster-container {
+    text-align: center;
+    height: 400px;
+    @media screen and (min-width: $tablet) {
+      height: 419px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 391px;
+    }
+  }
+
+  &__poster-img {
+    border-radius: 5px;
+    width: 260px;
+    height: 100%;
+    @media screen and (min-width: $tablet) {
+      width: 273px;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 254px;
+    }
+  }
+
+  &__title {
+    margin-top: 10px;
+    font-size: $main-font-size;
+    font-style: $font;
+    font-weight: $title-font-weigth;
+    line-height: $title-line-height;
+    color: $color-black;
+    text-transform: uppercase;
+    @media screen and (min-width: $tablet) {
+      line-height: $main-line-height;
+    }
+  }
+
+  &__info {
+    margin-top: 3px;
+    font-size: $main-font-size;
+    font-style: $font;
+    font-weight: $main-font-weight;
+    line-height: $title-line-height;
+    color: $color-orange;
+    @media screen and (min-width: $tablet) {
+      line-height: $main-line-height;
+    }
+  }
+}

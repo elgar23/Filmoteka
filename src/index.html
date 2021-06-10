@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+
+    <title>Filmoteka-03</title>
+  </head>
+
+  <body>
+    <header class="home">
+      <div id="header" class="box-container">
+        <nav class="page__nav">
+          <h1 class="logo">
+            <a id="filmoteka" class="home-link" href="#">Filmoteka</a>
+          </h1>
+          <div>
+            <a id="home" class="route selected" href="#">Home</a>
+            <div class="underscore"></div>
+          </div>
+          <div>
+            <a id="library" class="route" href="#">My Library</a>
+            <div class="underscore lib is-hidden"></div>
+          </div>
+        </nav>
+        <div class="header-template">
+          <div class="form">
+            <form class="search-form">
+              <div class="input__wrapper">
+                <input
+                  type="text"
+                  class="form__input"
+                  name="query"
+                  id="searchQuery"
+                  placeholder="Поиск фильмов"
+                  autocomplete="off"
+                />
+                <button type="submit" class="form__button">
+                  <span class="form__search"></span>
+                </button>
+              </div>
+            </form>
+          </div>
+          <div class="js-buttons is-hidden">
+            <button
+              id="watched"
+              type="button"
+              class="library__button library__button--active"
+            >
+              Watched
+            </button>
+            <button id="queue" type="button" class="library__button">
+              Queue
+            </button>
+          </div>
+        </div>
+        <div class="form__warning is-hidden">
+          Search result not successful. Enter the correct movie name and try
+          again!
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="movie-cards box-container">
+        <ul class="movie-grid" id="js-grid"></ul>
+        <div id="pagination-container"></div>
+      </section>
+      <!-- made by Nicolay Maryasov -->
+      <section class="library__container is-hidden">
+        <ul class="library__list" id="my-library"></ul>
+        <div class="library__page-selector" id="library__page-selector">
+          <!-- <span>Place page-selector here...</span> -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="box-container footer">
+      <div class="container footer-container">
+        <span class="footer-top"
+          >&copy; 2021 | All Rights Reserved |&nbsp;</span
+        >
+        <div>
+          <span>Developed with</span>
+          <svg width="14" height="13" class="icon-heart">
+            <use href="./img/sprite.svg#icon-heart"></use>
+          </svg>
+          <span>by</span>
+          <span class="footer-link">GoIt Students</span>
+        </div>
+      </div>
+    </footer>
+
+    <!-- team-modal -->
+    <!-- <div id="modal__team" class="modal__team"> -->
+    <div class="modal-wrapper js-backdrop">
+      <div class="modal-command">
+        <h2 class="team-heading">We are IT Bears</h2>
+        <ul class="team-members">
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/Eastvarga"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Alexander-1x.jpg 150w,
+                  ./img/Alexander-2x.jpg 300w,
+                  ./img/Alexander-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Alexander-2x.jpg"
+                alt="Alexander"
+              />
+              <div class="member-info">Alexander Serzhenko</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/OlyaVerbetska"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/OlyaV-1x.jpg 150w,
+                  ./img/OlyaV-2x.jpg 300w,
+                  ./img/OlyaV-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/OlyaV-2x.jpg"
+                alt="Olya"
+              />
+              <div class="member-info">Olya Verbetska</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/DawnrayVM"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Valeriy-1x.jpg 150w,
+                  ./img/Valeriy-2x.jpg 300w,
+                  ./img/Valeriy-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Valeriy-2x.jpg"
+                alt="Valeriy"
+              />
+              <div class="member-info">Valeriy Mashura</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/Polina-mind/"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Polina-1x.jpg 150w,
+                  ./img/Polina-2x.jpg 300w,
+                  ./img/Polina-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Polina-2x.jpg"
+                alt="Polina"
+              />
+              <div class="member-info">Полина Попова</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/Ksyusha88"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Ksyusha-1x.jpg 150w,
+                  ./img/Ksyusha-2x.jpg 300w,
+                  ./img/Ksyusha-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Ksyusha-2x.jpg"
+                alt="Ksyusha"
+              />
+              <div class="member-info">Горелова Ксюша</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/MarynaKip"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Maryna-1x.jpg 150w,
+                  ./img/Maryna-2x.jpg 300w,
+                  ./img/Maryna-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Maryna-2x.jpg"
+                alt="Maryna"
+              />
+              <div class="member-info">Maryna Kipenko</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/ErrFi"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Nicolay-1x.png 150w,
+                  ./img/Nicolay-2x.png 300w,
+                  ./img/Nicolay-3x.png 450w
+                "
+                sizes="150px"
+                src="./img/Nicolay-2x.png"
+                alt="Nicolay"
+              />
+              <div class="member-info">Nicolay Maryasov</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/elgar23"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Elgar-1x.png 150w,
+                  ./img/Elgar-2x.png 300w,
+                  ./img/Elgar-3x.png 450w
+                "
+                sizes="150px"
+                src="./img/Elgar-2x.png"
+                alt="Elgar"
+              />
+              <div class="member-info">Elgar</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/OlhaPylyp"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/OlhaP-1x.png 150w,
+                  ./img/OlhaP-2x.png 300w,
+                  ./img/OlhaP-3x.png 450w
+                "
+                sizes="150px"
+                src="./img/OlhaP-2x.png"
+                alt="Olha"
+              />
+              <div class="member-info">Olha Pylypova</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/youhim-ua"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Andrei-1x.png 150w,
+                  ./img/Andrei-2x.png 300w,
+                  ./img/Andrei-3x.png 450w
+                "
+                sizes="150px"
+                src="./img/Andrei-2x.png"
+                alt="Andrei"
+              />
+              <div class="member-info">Андрей Чепур-Крицкий</div>
+            </a>
+          </li>
+          <li class="member">
+            <a
+              class="member-link"
+              href="https://github.com/VeronikaVashchenko"
+              target="_blank"
+            >
+              <img
+                class="member-img"
+                srcset="
+                  ./img/Veronika-1x.jpg 150w,
+                  ./img/Veronika-2x.jpg 300w,
+                  ./img/Veronika-3x.jpg 450w
+                "
+                sizes="150px"
+                src="./img/Veronika-2x.jpg "
+                alt="Veronika"
+              />
+              <div class="member-info">Veronika Vashchenko</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <button class="team-btn-close js-team-close" type="button" title="Close">
+        <svg width="30" height="30" class="icon-close">
+          <use href="./img/sprite.svg#icon-close"></use>
+        </svg>
+      </button>
+    </div>
+    <!-- </div> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
